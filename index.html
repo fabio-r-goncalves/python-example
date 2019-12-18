@@ -1,0 +1,35 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>  
+
+    <button id="ajax">ajax call</button>
+    
+    <script type="text/javascript">
+        
+    
+        $('#ajax').click(function(){ 
+            
+             $.ajax({ 
+                 type: "GET",
+                 dataType: "json",
+                 url: "process",
+                 success: function(data){    
+                     document.getElementById("oids").innerHTML = data.oids;
+                     document.getElementById("values").innerHTML = data.values;
+                    console.log(data)
+                 }
+             });
+        });
+    
+    </script>
+
+<p id="oids"></p>
+<p id="values"></p>
+    
+    
+    
+    </body>
+</html>
